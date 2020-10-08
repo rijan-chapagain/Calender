@@ -19,30 +19,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.table);
 
         createDatabase = (Button) findViewById(R.id.createDatabase);
 
-        createDatabase.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    mySqliteOpenHelper = new MySqliteOpenHelper(getApplicationContext());
-                    Toast.makeText(getApplicationContext(),"DB successfully created. ", Toast.LENGTH_LONG).show();
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(getApplicationContext(),"Error creating database  ", Toast.LENGTH_LONG).show();
-                }
-                mDatabase = mySqliteOpenHelper.getReadableDatabase();
-
-                Cursor cursor = mDatabase.rawQuery("select * from caledar ;", null);
-
-                System.out.println("MainActivity.onClick:"+ cursor.getColumnCount());
-
-
-
-        }
-    });
+//        createDatabase.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try {
+//                    mySqliteOpenHelper = new MySqliteOpenHelper(getApplicationContext());
+//                    Toast.makeText(getApplicationContext(),"DB successfully created. ", Toast.LENGTH_LONG).show();
+//                }
+//                catch (Exception e)
+//                {
+//                    Toast.makeText(getApplicationContext(),"Error creating database  ", Toast.LENGTH_LONG).show();
+//                }
+//                mDatabase = mySqliteOpenHelper.getReadableDatabase();
+//
+//                Cursor cursor = mDatabase.rawQuery("select * from caledar ;", null);
+//
+//                System.out.println("MainActivity.onClick:"+ cursor.getColumnCount());
+//
+//
+//
+//        }
+//    });
     }
 }
